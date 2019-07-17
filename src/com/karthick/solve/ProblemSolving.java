@@ -72,6 +72,7 @@ public class ProblemSolving {
 				break;
 			}
 			
+			
 		} while (!conditionSatised);
 			return output;
 	}
