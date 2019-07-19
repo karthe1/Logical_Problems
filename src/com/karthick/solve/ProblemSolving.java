@@ -25,12 +25,13 @@ public class ProblemSolving {
 		for(int i=1; i<=b; i++) {
 			output = output + 'b';
 		}
-		
+
 		System.out.println("Actual String is " + output);
 		
 		char arr[] = output.toCharArray();
 		char temp;
 		boolean conditionSatised = false;
+		int n = 10;
 		do {
 			
 			for(int i=0; i < arr.length; i++) {
@@ -39,6 +40,7 @@ public class ProblemSolving {
 						temp = arr[i];
 						arr[i] = arr[i+1];
 						arr[i+1] = temp;
+						System.out.println(new String(arr));
 						break;
 					} else {
 						continue;
@@ -59,6 +61,7 @@ public class ProblemSolving {
 						temp = arr[j];
 						arr[j] = arr[j-1];
 						arr[j-1] = temp;
+						System.out.println(new String(arr));
 						break;
 					} else {
 						continue;
@@ -71,8 +74,8 @@ public class ProblemSolving {
 				conditionSatised = true;
 				break;
 			}
-			
-		} while (!conditionSatised);
+			n--;
+		} while (n>0);
 			return output;
 	}
 	
