@@ -22,7 +22,7 @@ public class ArrangePlayersInCamp {
 		while (testCases > 0) {
 			int totalPlayers = s.nextInt();
 			int dividingPlayers = s.nextInt();
-			if(totalPlayers%dividingPlayers == 0) {
+			if (totalPlayers % dividingPlayers == 0) {
 				String[] names = new String[totalPlayers];
 				for (int i = 0; i < names.length; i++) {
 					names[i] = s.next();
@@ -33,24 +33,24 @@ public class ArrangePlayersInCamp {
 				Iterator itr = totalCampMembers.iterator();
 				while (itr.hasNext()) {
 					String string = (String) itr.next();
-					if(membersInCamp1.size()==0) {
+					if (membersInCamp1.size() == 0) {
 						membersInCamp1.add(string);
-					} else if(membersInCamp1.get(0).length() == string.length()) {
+					} else if (membersInCamp1.get(0).length() == string.length()) {
 						membersInCamp1.add(string);
-					} else if(membersInCamp2.size()==0) {
+					} else if (membersInCamp2.size() == 0) {
 						membersInCamp2.add(string);
-					} else if(membersInCamp2.get(0).length() == string.length()) {
+					} else if (membersInCamp2.get(0).length() == string.length()) {
 						membersInCamp2.add(string);
 					}
 				}
 			} else {
-				System.out.println("Enter the total Players that can be divided equally divided in the camp.");
+				System.out.println("Enter the total number of players that can be equally divided into the camp.");
 				break;
 			}
-			System.out.println(totalCampMembers);
-			System.out.println(membersInCamp1);
-			System.out.println(membersInCamp2);
-			if(membersInCamp1.size() == dividingPlayers && membersInCamp2.size() == dividingPlayers) {
+			System.out.println("Total no of players for arranging in the camp : " + totalCampMembers);
+			System.out.println("Total no of players can be arranged in the camp 1 : " + membersInCamp1);
+			System.out.println("Total no of players can be arranged in the camp 2 : " + membersInCamp2);
+			if ((membersInCamp1.size() == dividingPlayers) && (membersInCamp2.size() == dividingPlayers)) {
 				System.out.println("Possible");
 			} else {
 				System.out.println("Not possible");
