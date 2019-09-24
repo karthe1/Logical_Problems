@@ -35,6 +35,8 @@ public class FormatDate {
 				inputDate.setDate(inputDate.getDate() - 1);
 				SimpleDateFormat sdf2 = new SimpleDateFormat("dd MMMM YYYY");
 				String outputFormat = sdf2.format(inputDate);
+				if(outputFormat.charAt(0)=='0')
+					outputFormat = outputFormat.substring(1);
 				System.out.println(outputFormat);
 			} else {
 				System.err.append("INVALID DATE OR INVALID YEAR (RANGES FROM 1600 TO 2000)");
