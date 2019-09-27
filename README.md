@@ -152,3 +152,81 @@ First line, T (â‰¤ 100), the number of testcases. Each testcase consists of date
 1 August 2000
 
 4 November 1999
+
+# Problem 4 : 
+
+This is a harder version of 1A - Bear and Vowels.
+
+There are  letters in the English alphabet and 6 of them are vowels: a,e,i,o,u,y. Other  letters are called consonants.
+
+Limak is a little polar bear. He found a string s consisting of lowercase English letters. He is going to read and pronounce s but it may be hard for him. Some letters are harder to pronounce, some are easier. Generally, little polar bears like vowels (letters a,e,i,o,u,y) and hate consonants.
+
+We define s to be hard if at least one of the two conditions holds true:
+
+There are more consonants than vowels.
+Some 3 consecutive letters are all consonants.
+Limak decided to write a program to check whether pronouncing s will be hard or easy. He wrote the main part of the program. To work correctly, it requires an array of booleans isVowel of length n, indexed 0 through . So, Limak added the following code at the beginning:
+
+string vowels = "aeiouy";
+
+    for(int i = 0; i < n; i++) // indices 0, 1, ..., n-1
+    for(int j = 0; j < 6; j++)
+        if(s[i] == vowels[j])
+            isVowel[i] = true;
+Everything would work correctly but there is one issue. Before the code provided above, the array isVowel isn't cleared properly. Some previous parts of program (parts not related to this problem) used the array. Because of that, exactly k random cells of the array are already set to true. Other  cells are set to false. And then the code provided above may change some more cells to true.
+
+Limak found the value of k. Also, he chose a string s of length n. There are  ways to choose k indices among  and say that those are initially set to true. Among those ways, for how many ways Limak's program would say that the given string s is hard to pronounce? Print the number of ways modulo .
+
+# Input format
+
+The first line contains two integers n and k denoting the length of the string and the number of cells already set to true in the array isVowel.
+
+The second line contains one string s of length n denoting a string chosen by Limak. Each character in s is one of  lowercase English letters.
+
+# Output format
+
+Print the answer modulo .
+
+Constraints
+
+Subtasks
+
+Extra 				constraints		Points		Which tests
+
+20						1-4
+
+30						5-10
+
+no extra constraints	50			11-20
+
+# sample input 
+
+6 2
+
+bbdxde
+
+# sample output
+
+8
+
+# Explanation
+
+In the sample test, exactly  cells are already set to true. For example, if two first cells are set to true (so, initially the array looks like 110000) then after processing the code provided in the statement, the array should be 110001 — cells set to true are isVowel[0], isVowel[1], isVowel[5]. The string would be hard to pronounce then, because there are 3 consecutive consonants.
+
+There are 8 ways to choose the initial array isVowel with  cells set to true:
+
+110000, described above
+
+100010
+
+100001
+
+010001
+
+001001
+
+000110
+
+000101
+
+000011
